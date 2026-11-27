@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { projetos, type Projeto } from "@/content/pt";
 import Collage from "@/components/Collage";
+import { CountUp } from "@/components/Small";
 
 export default function Projects() {
   const [aberto, setAberto] = useState<Projeto | null>(null);
@@ -75,7 +76,7 @@ export default function Projects() {
                 {aberto.numeros.map((n) => (
                   <div key={n.rotulo} className="bg-ink py-6 pr-4">
                     <dt className="label order-2 text-mute">{n.rotulo}</dt>
-                    <dd className="display text-5xl">{n.valor}</dd>
+                    <dd className="display text-5xl"><CountUp valor={n.valor} /></dd>
                   </div>
                 ))}
               </dl>

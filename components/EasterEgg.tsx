@@ -17,8 +17,16 @@ export default function EasterEgg() {
   };
   const play = () => { getAudio().play(); setTocando(true); };
   const pause = () => { audio.current?.pause(); setTocando(false); };
-  const abrir = () => { setAberto(true); play(); };
-  const fechar = () => { pause(); setAberto(false); };
+  // Só dá play ao abrir; se já está aberto não mexe. Evita a música voltar
+  // sozinha quando o ® fica com foco e a pessoa aperta Espaço pra rolar.
+  const abertoRef = useRef(false);
+  const abrir = () => {
+    if (abertoRef.current) return;
+    abertoRef.current = true;
+    setAberto(true);
+    play();
+  };
+  const fechar = () => { pause(); abertoRef.current = false; setAberto(false); };
 
   useEffect(() => {
     let buf = "";
@@ -35,7 +43,7 @@ export default function EasterEgg() {
   return (
     <>
       <button
-        onClick={abrir}
+        onClick={(e) => { e.currentTarget.blur(); abrir(); }}
         aria-label="Tocar a Beat Tape escondida"
         className="align-super text-[0.22em] leading-none transition-transform hover:rotate-[20deg] hover:scale-110"
       >
@@ -61,7 +69,7 @@ export default function EasterEgg() {
             <p className="text-mute">Beat Tape · Lado B</p>
             <p>01. Agua — JVA</p>
           </div>
-          <button onClick={() => (tocando ? pause() : play())} aria-label={tocando ? "Pausar" : "Tocar"} className="ml-2 border border-line px-2 py-1 hover:border-paper">
+          <button onClick={(e) => { e.currentTarget.blur(); if (tocando) pause(); else play(); }} aria-label={tocando ? "Pausar" : "Tocar"} className="ml-2 border border-line px-2 py-1 hover:border-paper">
             {tocando ? "❚❚" : "▶"}
           </button>
           <button onClick={fechar} aria-label="Fechar e parar a música" className="px-1 text-mute hover:text-paper">×</button>

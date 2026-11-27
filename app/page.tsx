@@ -2,7 +2,8 @@ import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import Projects from "@/components/Projects";
 import EasterEgg from "@/components/EasterEgg";
-import HeroArt from "@/components/HeroArt";
+import HeroFigure from "@/components/HeroFigure";
+import Wizard from "@/components/Wizard";
 import { site, contato, sobre, experiencia, habilidades } from "@/content/pt";
 
 function Titulo({ n, children }: { n: string; children: React.ReactNode }) {
@@ -12,21 +13,6 @@ function Titulo({ n, children }: { n: string; children: React.ReactNode }) {
       <h2 className="label text-mute">{children}</h2>
       <span className="h-px flex-1 bg-line" />
     </div>
-  );
-}
-
-function Globo() {
-  return (
-    <svg viewBox="0 0 120 70" className="globe w-28" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth=".6">
-      <g>
-        <ellipse className="m" cx="60" cy="35" rx="58" ry="33" />
-        <ellipse className="m" cx="60" cy="35" rx="58" ry="33" />
-        <ellipse className="m" cx="60" cy="35" rx="58" ry="33" />
-        <ellipse className="m" cx="60" cy="35" rx="58" ry="33" />
-      </g>
-      <ellipse cx="60" cy="35" rx="58" ry="33" />
-      {[12, 23, 35, 47, 58].map((y) => <line key={y} x1="4" x2="116" y1={y} y2={y} />)}
-    </svg>
   );
 }
 
@@ -60,22 +46,14 @@ export default function Home() {
             </div>
           </div>
 
-          <figure className="group torn relative min-h-[320px] overflow-hidden bg-panel lg:min-h-0">
-            {site.fotoHero ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={site.fotoHero} alt="" className="photo absolute inset-0 h-full w-full object-cover" />
-            ) : (
-              <div className="photo absolute inset-0"><HeroArt /></div>
-            )}
-            <figcaption className="label absolute bottom-3 left-3 bg-ink/80 px-1 text-mute">Catedral · Petrópolis</figcaption>
-          </figure>
+          <HeroFigure />
 
           <aside className="flex flex-row flex-wrap items-start justify-between gap-6 border-line text-sm lg:ml-8 lg:flex-col lg:justify-start lg:gap-12 lg:border-l lg:pl-8">
             <div className="label leading-relaxed">
               <p>{site.cidade}</p>
               <p className="mt-3 text-mute">{site.coords[0]}<br />{site.coords[1]}</p>
             </div>
-            <Globo />
+            <Wizard />
             <ul className="label space-y-3 text-mute">
               {site.interesses.map((x) => <li key={x}>{x}</li>)}
             </ul>

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { site } from "@/content/pt";
+import { Clock } from "@/components/Small";
 
 const secoes = [
   { id: "inicio", label: "Início" },
@@ -44,6 +45,8 @@ export default function Nav() {
               <a key={s.id} href={`#${s.id}`} className={`label link-u ${ativa === s.id ? "text-paper" : "text-mute hover:text-paper"}`}>{s.label}</a>
             ))}
           </nav>
+          <div className="flex items-center gap-4">
+          <Clock />
           <button
             onClick={() => setGrid((g) => !g)}
             aria-pressed={grid}
@@ -52,6 +55,7 @@ export default function Nav() {
           >
             [ {grid ? "×" : " "} ]
           </button>
+          </div>
         </div>
       </header>
 
