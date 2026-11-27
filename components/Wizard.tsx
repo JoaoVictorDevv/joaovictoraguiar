@@ -23,7 +23,7 @@ export default function Wizard() {
           <img src="/arte/mago.png" alt="" className="w-full invert mix-blend-screen" width={446} height={417} />
           <span className="mt-2 flex items-end justify-end gap-2 border-t border-line pt-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/arte/assinatura.svg" alt="Assinatura de João Victor Aguiar" className="h-12 w-auto" width={46} height={48} />
+            <img src="/arte/assinatura.svg" alt="Assinatura de João Victor Aguiar" className="h-10 w-auto" width={95} height={50} />
           </span>
         </button>
       )}
