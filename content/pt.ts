@@ -148,3 +148,10 @@ export const habilidades = [
   { grupo: "Infra e mais", itens: ["Redes e Wi-Fi", "Suporte de TI", "Google Ads", "Meta Ads", "Programação com IA"] },
   { grupo: "Idiomas", itens: ["Português — nativo", "Inglês — avançado"] },
 ];
+
+// Verso da máscara do hero (aparece ao clicar nela).
+export const resumo = [
+  { rotulo: "Hoje", texto: "Coordeno a operação e os dados de uma cooperativa rural — e escrevo o sistema que ela usa." },
+  { rotulo: "Faço", texto: "Aplicações web com Next.js, React e TypeScript, do Excel ao app em produção." },
+  { rotulo: "Busco", texto: "Novas oportunidades em desenvolvimento." },
+];

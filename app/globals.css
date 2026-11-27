@@ -60,6 +60,12 @@ body::after {
 .eq span:nth-child(2) { animation-delay: -.3s; } .eq span:nth-child(3) { animation-delay: -.6s; }
 @keyframes eq { from { transform: scaleY(.2); } to { transform: scaleY(1); } }
 
+/* máscara virando como carta */
+.flip { transform-style: preserve-3d; transition: transform .8s cubic-bezier(.3,.7,.3,1); }
+.flip.is-flipped { transform: rotateY(180deg); }
+.face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.face-back { transform: rotateY(180deg); }
+
 /* Lado B abrindo */
 details[open] .ladob-in { animation: swapin .5s ease; }
 
