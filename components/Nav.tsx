@@ -15,7 +15,6 @@ const secoes = [
 export default function Nav() {
   const [ativa, setAtiva] = useState("inicio");
   const [flutua, setFlutua] = useState(false);
-  const [grid, setGrid] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setFlutua(window.scrollY > window.innerHeight * 0.6);
@@ -29,11 +28,8 @@ export default function Nav() {
     return () => { window.removeEventListener("scroll", onScroll); io.disconnect(); };
   }, []);
 
-  useEffect(() => { document.documentElement.dataset.grid = grid ? "on" : "off"; }, [grid]);
-
   return (
     <>
-      <div className="grid-overlay" aria-hidden="true" />
       <header className="relative z-40 border-b border-line">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 md:px-10">
           <a href="#inicio" className="flex items-baseline gap-4">
@@ -45,17 +41,7 @@ export default function Nav() {
               <a key={s.id} href={`#${s.id}`} className={`label link-u ${ativa === s.id ? "text-paper" : "text-mute hover:text-paper"}`}>{s.label}</a>
             ))}
           </nav>
-          <div className="flex items-center gap-4">
           <Clock />
-          <button
-            onClick={() => setGrid((g) => !g)}
-            aria-pressed={grid}
-            aria-label="Mostrar grid de colunas"
-            className="label border border-line px-2 py-1 text-mute hover:border-paper hover:text-paper"
-          >
-            [ {grid ? "×" : " "} ]
-          </button>
-          </div>
         </div>
       </header>
 
