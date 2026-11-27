@@ -1,20 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { projetos, type Projeto } from "@/content/pt";
-
-// Capa tipográfica gerada (sem imagem): troque por foto/print quando tiver.
-function Capa({ p, i }: { p: Projeto; i: number }) {
-  return (
-    <div className="photo relative aspect-[4/3] overflow-hidden border border-line bg-panel">
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{ backgroundImage: `repeating-linear-gradient(${[0, 90, 45, 135][i % 4]}deg, #e9e6df 0 1px, transparent 1px ${6 + i * 2}px)` }}
-      />
-      <span className="display absolute bottom-3 left-3 right-3 text-[clamp(2rem,4vw,3.25rem)] text-paper">{p.nome}</span>
-      <span className="label absolute right-3 top-3 text-mute">{String(i + 1).padStart(3, "0")}</span>
-    </div>
-  );
-}
+import Collage from "@/components/Collage";
 
 export default function Projects() {
   const [aberto, setAberto] = useState<Projeto | null>(null);
@@ -52,7 +39,7 @@ export default function Projects() {
               className="group block w-full p-5 text-left md:p-8"
               aria-haspopup="dialog"
             >
-              <Capa p={p} i={i} />
+              <Collage p={p} i={i} />
               <div className="mt-4 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-medium">{p.nome}</p>

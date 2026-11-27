@@ -60,6 +60,13 @@ body::after {
 .eq span:nth-child(2) { animation-delay: -.3s; } .eq span:nth-child(3) { animation-delay: -.6s; }
 @keyframes eq { from { transform: scaleY(.2); } to { transform: scaleY(1); } }
 
+/* toca-discos do easter egg */
+.vinyl { transform-origin: 125px 112px; animation: rot 1.8s linear infinite; animation-play-state: paused; }
+.vinyl.is-on { animation-play-state: running; }
+@keyframes rot { to { transform: rotate(360deg); } }
+.tonearm { transform-origin: 262px 40px; transform: rotate(-12deg); transition: transform 1s cubic-bezier(.3,.7,.3,1); }
+.tonearm.is-on { transform: rotate(16deg); }
+
 dialog::backdrop { background: rgb(11 11 11 / .85); }
 dialog[open] { animation: pop .35s ease; }
 @keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }

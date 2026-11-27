@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import Projects from "@/components/Projects";
 import EasterEgg from "@/components/EasterEgg";
+import HeroArt from "@/components/HeroArt";
 import { site, contato, sobre, experiencia, habilidades } from "@/content/pt";
 
 function Titulo({ n, children }: { n: string; children: React.ReactNode }) {
@@ -64,9 +65,9 @@ export default function Home() {
               // eslint-disable-next-line @next/next/no-img-element
               <img src={site.fotoHero} alt="" className="photo absolute inset-0 h-full w-full object-cover" />
             ) : (
-              <div className="photo absolute inset-0" style={{ background: "radial-gradient(120% 80% at 70% 30%, #3a3a3a, #121212 70%)" }} />
+              <div className="photo absolute inset-0"><HeroArt /></div>
             )}
-            <figcaption className="label absolute bottom-3 left-3 text-mute">Foto · P&amp;B</figcaption>
+            <figcaption className="label absolute bottom-3 left-3 bg-ink/80 px-1 text-mute">Catedral · Petrópolis</figcaption>
           </figure>
 
           <aside className="flex flex-row flex-wrap items-start justify-between gap-6 border-line text-sm lg:ml-8 lg:flex-col lg:justify-start lg:gap-12 lg:border-l lg:pl-8">

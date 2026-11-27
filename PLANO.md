@@ -28,6 +28,7 @@ npm run build    # gera o site estático em /out
 - [ ] Prints/mockups dos projetos (hoje são capas tipográficas geradas)
 - [ ] Imagem Open Graph
 - [ ] YouTube / Instagram / X: mandar links se quiser no contato
-- [ ] Subir pro GitHub (repo público) e fazer deploy na Vercel
+- [x] Subir pro GitHub: https://github.com/JoaoVictorDevv/joaovictoraguiar
+- [ ] Deploy na Vercel (importar o repo em vercel.com/new, nome do projeto `joaovictoraguiar`)
 - [ ] Rodar Lighthouse (meta ≥ 90) e testar no celular
 - [ ] Versão em inglês (`content/en.ts`) — depois
