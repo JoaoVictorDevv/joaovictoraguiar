@@ -31,10 +31,6 @@ export default function HeroArt() {
       <path d="M200 40 L214 252 H186Z" fill="url(#dots)" />
       <path d="M200 40 L214 252 H186Z" fill="none" stroke="#e9e6df" strokeWidth=".8" />
       <path d="M200 22 V44 M193 30 H207" stroke="#e9e6df" strokeWidth="1.5" />
-      {/* pináculos */}
-      {[176, 224, 136, 264].map((x, i) => (
-        <path key={x} d={`M${x} ${i < 2 ? 262 : 400} l4 -${i < 2 ? 34 : 40} l4 ${i < 2 ? 34 : 40}Z`} transform={`translate(-4 0)`} fill="#e9e6df" />
-      ))}
       {/* rosácea e portal */}
       <circle cx="200" cy="420" r="16" fill="#0b0b0b" stroke="#e9e6df" strokeWidth="1.2" />
       <circle cx="200" cy="420" r="7" fill="none" stroke="#e9e6df" strokeWidth=".8" />
