@@ -100,7 +100,7 @@ export const projetos: Projeto[] = [
 
 export const sobre = {
   texto:
-    "De Petrópolis. Curioso por natureza, coordeno a logística e os dados de uma cooperativa rural e escrevo o software que ela usa. Busco estágio ou vaga júnior em desenvolvimento.",
+    "De Petrópolis. Curioso por natureza, coordeno a logística e os dados de uma cooperativa rural e escrevo o software que ela usa. Aberto a oportunidades em desenvolvimento.",
   ladoB:
     "Fora do código: rap, boom bap dos anos 90, produção de beats sampleados, graffiti e cultura urbana.",
 };

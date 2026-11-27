@@ -52,7 +52,7 @@ export default function Home() {
           <aside className="flex flex-row flex-wrap items-start justify-between gap-6 border-line text-sm lg:ml-8 lg:flex-col lg:justify-start lg:gap-12 lg:border-l lg:pl-8">
             <div className="label leading-relaxed">
               <p><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#34d399] align-middle" aria-hidden="true" />Disponível</p>
-              <p className="mt-2 text-mute">Estágio · Júnior</p>
+              <p className="mt-2 text-mute">Para novos projetos</p>
             </div>
             <Wizard />
             <ul className="label space-y-3 text-mute">
@@ -125,7 +125,7 @@ export default function Home() {
         </section>
 
         {/* 06 · CONTATO */}
-        <Marquee itens={["Disponível para estágio e júnior", "Vamos conversar", "Full stack", "Dados e automação"]} />
+        <Marquee itens={["Aberto a novas oportunidades", "Vamos conversar", "Full stack", "Dados e automação"]} />
 
         <section id="contato" className="border-t border-line">
           <div className={`${wrap} py-16 md:py-28`}>

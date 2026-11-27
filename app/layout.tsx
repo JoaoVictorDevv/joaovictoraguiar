@@ -6,6 +6,7 @@ const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton
 const jbm = JetBrains_Mono({ weight: ["300", "400", "500"], subsets: ["latin"], variable: "--font-jbm", display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://joaovictoraguiar.vercel.app"),
   title: "João Victor Aguiar — Desenvolvedor full stack",
   description: "Portfólio de João Victor Aguiar: desenvolvimento web, dados e automação. Petrópolis – RJ.",
   openGraph: {
