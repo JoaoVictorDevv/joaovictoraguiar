@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+
+# material de trabalho (não publicar)
+BRIEF-site-portfolio.md
+referencias/
+inspiraçoes fotos/
