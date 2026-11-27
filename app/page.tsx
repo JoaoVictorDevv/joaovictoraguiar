@@ -46,7 +46,7 @@ export default function Home() {
               <span className="label text-mute">{site.nome}</span>
               <span className="h-px max-w-xs flex-1 bg-line" />
             </div>
-            <h1 className="display mt-6 text-[clamp(3.6rem,10.5vw,10rem)]">
+            <h1 className="display mt-8 pt-[.14em] text-[clamp(3.6rem,10.5vw,10rem)] !leading-[.92]">
               João Victor<br />Aguiar<EasterEgg />
             </h1>
             <p className="label mt-8 text-sm font-light md:text-base">
