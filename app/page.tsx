@@ -78,10 +78,12 @@ export default function Home() {
             <Titulo n="03">Sobre mim</Titulo>
             <div className="space-y-10">
               <p className="text-[clamp(1.25rem,2.4vw,2rem)] leading-snug" data-reveal>{sobre.texto}</p>
-              <div className="grid gap-6 border-t border-line pt-8 md:grid-cols-[auto_1fr]" data-reveal>
-                <p className="display text-5xl">Lado B</p>
-                <p className="max-w-md text-sm leading-relaxed text-mute">{sobre.ladoB}</p>
-              </div>
+              <details className="group/b border-t border-line pt-6" data-reveal>
+                <summary className="label inline-flex cursor-pointer list-none items-center gap-3 border border-line px-3 py-2 text-mute transition-colors hover:border-paper hover:text-paper [&::-webkit-details-marker]:hidden">
+                  Lado B <span className="transition-transform group-open/b:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="ladob-in mt-5 max-w-md text-sm leading-relaxed text-mute">{sobre.ladoB}</p>
+              </details>
             </div>
           </div>
         </section>

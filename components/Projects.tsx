@@ -32,22 +32,47 @@ export default function Projects() {
 
   return (
     <>
-      <ul className="grid gap-px bg-line sm:grid-cols-2">
+      <ul className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
         {projetos.map((p, i) => (
-          <li key={p.id} className="bg-ink" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
+          <li key={p.id} className={`bg-ink ${i === 0 ? "sm:col-span-2 lg:col-span-3" : ""}`} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
             <button
               onClick={() => { setAberto(p); history.replaceState(null, "", `#projeto-${p.id}`); }}
-              className="group block w-full p-5 text-left md:p-8"
+              className="group block w-full p-5 text-left transition-colors hover:bg-panel md:p-8"
               aria-haspopup="dialog"
             >
-              <Collage p={p} i={i} />
-              <div className="mt-4 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-medium">{p.nome}</p>
-                  <p className="mt-1 text-xs text-mute">{p.resumo}</p>
+              {i === 0 ? (
+                // Projeto em destaque: capa grande + números já visíveis no card
+                <div className="grid items-center gap-8 md:grid-cols-[1.15fr_1fr] md:gap-12">
+                  <Collage p={p} i={i} />
+                  <div>
+                    <p className="label text-mute">Projeto em destaque · {p.ano}</p>
+                    <p className="display mt-3 text-[clamp(2.5rem,5vw,4.5rem)]">{p.nome}</p>
+                    <p className="mt-3 max-w-md text-sm leading-relaxed text-mute">{p.resumo}. Em uso toda semana na operação.</p>
+                    {p.numeros && (
+                      <dl className="mt-6 grid grid-cols-3 gap-px border-y border-line bg-line">
+                        {p.numeros.slice(0, 3).map((n) => (
+                          <div key={n.rotulo} className="bg-ink py-4 pr-3 transition-colors group-hover:bg-panel">
+                            <dd className="display text-3xl md:text-4xl">{n.valor}</dd>
+                            <dt className="mt-1 text-[11px] uppercase tracking-[.1em] text-mute">{n.rotulo}</dt>
+                          </div>
+                        ))}
+                      </dl>
+                    )}
+                    <p className="label mt-6 inline-flex items-center gap-2 border-b border-paper pb-1">Ver o case completo <span className="arrow">↘</span></p>
+                  </div>
                 </div>
-                <span className="arrow text-mute group-hover:text-paper" aria-hidden="true">↘</span>
-              </div>
+              ) : (
+                <>
+                  <Collage p={p} i={i} />
+                  <div className="mt-4 flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-medium">{p.nome}</p>
+                      <p className="mt-1 text-xs text-mute">{p.resumo}</p>
+                    </div>
+                    <span className="label shrink-0 text-mute group-hover:text-paper">Ver <span className="arrow">↘</span></span>
+                  </div>
+                </>
+              )}
             </button>
           </li>
         ))}

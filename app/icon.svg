@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 95 460 460">
+  <!-- Máscara de metal em 3/4, estilo quadrinho P&B. Desenho original para o site. -->
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.4" fill="#0b0b0b"/></pattern>
+    <pattern id="dotsS" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#0b0b0b"/></pattern>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)"><rect width="7" height="2" fill="#e9e6df"/></pattern>
+    <radialGradient id="bg" cx="55%" cy="40%" r="75%"><stop offset="0" stop-color="#232323"/><stop offset="1" stop-color="#0b0b0b"/></radialGradient>
+  </defs>
+  <rect x="-15" y="95" width="460" height="460" rx="80" fill="#0b0b0b"/>
+  <rect width="400" height="600" fill="url(#bg)"/>
+
+<g stroke="#0b0b0b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- cúpula / testa -->
+    <path d="M136 222 C142 158 196 112 252 116 C292 120 316 156 318 206 L300 216 L150 236 Z" fill="#dcd8cf"/>
+    <path d="M232 120 C280 124 312 160 316 206 L300 216 L262 218 C270 180 258 142 232 120 Z" fill="url(#dots)"/>
+    <!-- faixa da sobrancelha -->
+    <path d="M112 236 C170 214 262 206 322 210 L326 250 C268 244 176 252 112 272 Z" fill="#e9e6df"/>
+    <path d="M262 212 C290 210 310 210 322 210 L326 250 C306 248 284 248 262 250 Z" fill="url(#dots)"/>
+    <!-- bochecha esquerda (perto) -->
+    <path d="M104 268 L132 266 L140 316 L206 306 L218 356 L176 368 L116 336 Z" fill="#dcd8cf"/>
+    <!-- bochecha direita (longe) -->
+    <path d="M298 250 L326 250 L324 314 L286 344 L252 344 L252 300 L296 294 Z" fill="#cfcac0"/>
+    <path d="M298 250 L326 250 L324 314 L286 344 L270 344 Z" fill="url(#dots)"/>
+    <!-- ponte do nariz -->
+    <path d="M206 252 L250 250 L254 344 L218 356 Z" fill="#e9e6df"/>
+    <path d="M236 251 L250 250 L254 344 L240 348 Z" fill="url(#dotsS)"/>
+    <!-- buracos dos olhos -->
+    <path d="M132 272 L204 262 L200 304 L140 314 Z" fill="#0b0b0b"/>
+    <path d="M252 258 L298 254 L296 292 L254 298 Z" fill="#0b0b0b"/>
+    <!-- mandíbula lateral (sombra) -->
+    <path d="M116 336 L176 368 L178 432 L134 392 Z" fill="#9b978f"/>
+    <path d="M116 336 L176 368 L178 432 L134 392 Z" fill="url(#dots)"/>
+    <!-- barra da boca esquerda (perto, longa) -->
+    <path d="M176 368 L218 356 L226 486 C220 506 196 508 190 486 Z" fill="#dcd8cf"/>
+    <path d="M206 360 L218 356 L226 486 C224 496 216 502 208 500 Z" fill="url(#dots)"/>
+    <!-- barra da boca direita (longe) -->
+    <path d="M266 344 L292 336 L300 450 C296 466 276 468 272 452 Z" fill="#cfcac0"/>
+    <path d="M282 339 L292 336 L300 450 C298 458 292 462 286 462 Z" fill="url(#dots)"/>
+  </g>
+
+  <!-- brilhos de metal -->
+  <g stroke="#ffffff" stroke-linecap="round" fill="none">
+    <path d="M164 196 C176 160 204 136 236 130" stroke-width="6"/>
+    <path d="M130 244 C170 230 214 224 250 222" stroke-width="3"/>
+    <path d="M188 384 L194 470" stroke-width="4"/>
+    <path d="M118 286 L124 326" stroke-width="3"/>
+    <path d="M216 268 L220 330" stroke-width="2.5"/>
+  </g>
+  <!-- rebites -->
+  <g fill="#0b0b0b"><circle cx="122" cy="258" r="4"/><circle cx="318" cy="234" r="4"/><circle cx="126" cy="318" r="3.5"/></g>
+</svg>
