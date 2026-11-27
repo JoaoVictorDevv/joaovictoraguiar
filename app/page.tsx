@@ -4,6 +4,7 @@ import Projects from "@/components/Projects";
 import EasterEgg from "@/components/EasterEgg";
 import HeroFigure from "@/components/HeroFigure";
 import Wizard from "@/components/Wizard";
+import { Marquee } from "@/components/Small";
 import { site, contato, sobre, experiencia, habilidades } from "@/content/pt";
 
 function Titulo({ n, children }: { n: string; children: React.ReactNode }) {
@@ -50,8 +51,8 @@ export default function Home() {
 
           <aside className="flex flex-row flex-wrap items-start justify-between gap-6 border-line text-sm lg:ml-8 lg:flex-col lg:justify-start lg:gap-12 lg:border-l lg:pl-8">
             <div className="label leading-relaxed">
-              <p>{site.cidade}</p>
-              <p className="mt-3 text-mute">{site.coords[0]}<br />{site.coords[1]}</p>
+              <p><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#34d399] align-middle" aria-hidden="true" />Disponível</p>
+              <p className="mt-2 text-mute">Estágio · Júnior</p>
             </div>
             <Wizard />
             <ul className="label space-y-3 text-mute">
@@ -59,6 +60,8 @@ export default function Home() {
             </ul>
           </aside>
         </section>
+
+        <Marquee itens={["React", "Next.js", "TypeScript", "Node.js", "SQL", "Dados", "Automação", "Excel"]} />
 
         {/* 02 · PROJETOS */}
         <section id="projetos" className="border-t border-line">
@@ -122,6 +125,8 @@ export default function Home() {
         </section>
 
         {/* 06 · CONTATO */}
+        <Marquee itens={["Disponível para estágio e júnior", "Vamos conversar", "Full stack", "Dados e automação"]} />
+
         <section id="contato" className="border-t border-line">
           <div className={`${wrap} py-16 md:py-28`}>
             <Titulo n="06">Contato</Titulo>
@@ -149,7 +154,7 @@ export default function Home() {
 
       <footer className="border-t border-line">
         <div className={`${wrap} flex flex-col justify-between gap-2 py-8 pb-24 text-[11px] text-mute md:flex-row md:pb-8`}>
-          <p>© 2026 — {site.nome}. Feito em Petrópolis – RJ com Next.js.</p>
+          <p>© 2026 — {site.nome}. Feito com Next.js.</p>
           <p>Psst: tem uma faixa escondida no site.</p>
         </div>
       </footer>

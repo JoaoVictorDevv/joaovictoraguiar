@@ -13,6 +13,19 @@ export function Clock() {
   return <span className="text-[11px] tabular-nums tracking-[.12em] text-mute" suppressHydrationWarning>{hora}</span>;
 }
 
+// Faixa com texto correndo devagar (para com "reduzir movimento").
+export function Marquee({ itens }: { itens: string[] }) {
+  const linha = itens.map((t) => `${t}  •  `).join("");
+  return (
+    <div className="overflow-hidden border-y border-line py-3" aria-hidden="true">
+      <div className="marquee flex w-max whitespace-pre text-[12px] uppercase tracking-[.2em] text-mute">
+        <span>{linha.repeat(3)}</span>
+        <span>{linha.repeat(3)}</span>
+      </div>
+    </div>
+  );
+}
+
 // Conta de 0 até o número (ex.: "~200" -> 0…200). Texto sem número fica igual.
 export function CountUp({ valor }: { valor: string }) {
   const m = valor.match(/^(\D*)(\d+)(.*)$/);

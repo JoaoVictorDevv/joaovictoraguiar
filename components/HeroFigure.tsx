@@ -8,7 +8,7 @@ export default function HeroFigure() {
   const [qual, setQual] = useState<"mascara" | "catedral">("mascara");
   const troca = () => setQual((q) => (q === "mascara" ? "catedral" : "mascara"));
   return (
-    <figure className="group torn relative min-h-[320px] overflow-hidden bg-panel lg:min-h-0">
+    <figure className="group torn relative mx-auto aspect-[2/3] w-full max-w-md overflow-hidden bg-panel lg:aspect-auto lg:max-w-none">
       <button onClick={troca} aria-label="Trocar a imagem" className="absolute inset-0 block cursor-pointer">
         <div key={qual} className="photo swap-in absolute inset-0">
           {qual === "mascara" ? <MaskArt /> : <HeroArt />}
