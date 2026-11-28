@@ -4,7 +4,7 @@
 export const site = {
   nome: "João Victor Aguiar",
   sigla: "JV.",
-  papel: ["Desenvolvedor full stack", "Dados e automação", "Música"],
+  papel: ["Desenvolvedor full stack", "Dados e automação"],
   frase: "Construo sistemas que rodam no mundo real.",
   cidade: "Petrópolis – RJ, BR",
   coords: ["22.5050° S", "43.1789° W"],
