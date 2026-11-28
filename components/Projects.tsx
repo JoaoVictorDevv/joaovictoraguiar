@@ -32,9 +32,9 @@ export default function Projects() {
 
   return (
     <>
-      <ul className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-px bg-line sm:grid-cols-2">
         {projetos.map((p, i) => (
-          <li key={p.id} className={`bg-ink ${i === 0 ? "sm:col-span-2 lg:col-span-3" : ""}`} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
+          <li key={p.id} className={`bg-ink ${i === 0 ? "sm:col-span-2" : ""}`} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
             <button
               onClick={() => { setAberto(p); history.replaceState(null, "", `#projeto-${p.id}`); }}
               className="group block w-full p-5 text-left transition-colors hover:bg-panel md:p-8"

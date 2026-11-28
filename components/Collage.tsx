@@ -42,6 +42,34 @@ function Tela({ id }: { id: string }) {
         ))}
       </g>
     );
+  if (id === "pettracker")
+    // celular com a aba "Hoje": doses marcadas e status (dados fictícios)
+    return (
+      <g>
+        <rect width="220" height="140" fill="#141414" />
+        <g transform="translate(75 4)">
+          <rect width="70" height="132" rx="10" fill={D} stroke={L} />
+          <rect x="25" y="5" width="20" height="4" rx="2" fill={L} />
+          <text x="8" y="26" fill={P} fontFamily="var(--font-anton)" fontSize="11">HOJE</text>
+          {[34, 54, 74, 94].map((y, i) => (
+            <g key={y}>
+              <rect x="6" y={y} width="58" height="16" fill="#181818" stroke={L} />
+              <circle cx="14" cy={y + 8} r="4" fill={i < 2 ? P : "none"} stroke={i < 2 ? P : M} />
+              <rect x="22" y={y + 4} width={22 + ((i * 9) % 14)} height="3" fill={M} />
+              <rect x="22" y={y + 10} width="14" height="2" fill={L} />
+              <rect x="52" y={y + 5} width="8" height="6" fill={i === 3 ? M : L} />
+            </g>
+          ))}
+          <rect x="6" y="118" width="58" height="8" fill="#181818" />
+          {[0, 1, 2, 3].map((k) => <rect key={k} x={12 + k * 14} y="121" width="6" height="2" fill={k ? L : P} />)}
+        </g>
+        {/* envelope ao lado */}
+        <g transform="translate(160 54) rotate(8)">
+          <rect width="46" height="30" fill="#181818" stroke={M} />
+          <path d="M0 0 L23 17 L46 0" fill="none" stroke={M} />
+        </g>
+      </g>
+    );
   if (id === "thaixskill")
     return (
       <g>
@@ -91,7 +119,7 @@ export default function Collage({ p, i }: { p: Projeto; i: number }) {
         {/* papel com o nome */}
         <g transform={`translate(${i % 2 ? 24 : 120} 150) rotate(${-rot * 1.6})`}>
           <path d="M0 2 L8 0 L20 3 L40 0 L60 2 L80 0 L100 3 L130 1 L156 3 L156 56 L130 58 L90 55 L50 58 L20 55 L0 57Z" fill={P} />
-          <text x="10" y="44" fill="#0b0b0b" fontFamily="var(--font-anton)" fontSize="34">{({ cooperativa: "PNAE", catalogo: "CATÁLOGO", thaixskill: "THAIX", portfolio: "JVA." } as Record<string, string>)[p.id] ?? p.nome.toUpperCase()}</text>
+          <text x="10" y="44" fill="#0b0b0b" fontFamily="var(--font-anton)" fontSize="34">{({ cooperativa: "PNAE", pettracker: "PETS", catalogo: "CATÁLOGO", thaixskill: "THAIX", portfolio: "JVA." } as Record<string, string>)[p.id] ?? p.nome.toUpperCase()}</text>
         </g>
         {/* fita adesiva */}
         <rect x="118" y="10" width="60" height="16" fill={P} opacity=".55" transform="rotate(-6 148 18)" />
