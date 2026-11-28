@@ -7,10 +7,19 @@ export default function EasterEgg() {
   const audio = useRef<HTMLAudioElement | null>(null);
   const [tocando, setTocando] = useState(false);
   const [aberto, setAberto] = useState(false);
+  const [volume, setVolume] = useState(0.7);
+  const [mudo, setMudo] = useState(false);
+
+  useEffect(() => {
+    // `muted` também funciona no iPhone, que ignora `volume` via código
+    if (audio.current) { audio.current.volume = volume; audio.current.muted = mudo; }
+  }, [volume, mudo]);
 
   const getAudio = () => {
     if (!audio.current) {
       audio.current = new Audio("/audio/agua.mp3");
+      audio.current.volume = volume;
+      audio.current.muted = mudo;
       audio.current.addEventListener("ended", () => setTocando(false));
     }
     return audio.current;
@@ -68,6 +77,22 @@ export default function EasterEgg() {
           <div className="leading-relaxed">
             <p className="text-mute">Beat Tape · Lado B</p>
             <p>01. Agua — JVA</p>
+            <div className="mt-1 flex items-center gap-2">
+              <button
+                onClick={(e) => { e.currentTarget.blur(); setMudo((m) => !m); }}
+                aria-label={mudo ? "Ativar som" : "Tirar som"}
+                className="w-6 text-left text-mute hover:text-paper"
+              >
+                {mudo || volume === 0 ? "🔇︎" : "🔊︎"}
+              </button>
+              <input
+                type="range" min={0} max={1} step={0.05}
+                value={mudo ? 0 : volume}
+                onChange={(e) => { setVolume(Number(e.target.value)); setMudo(false); }}
+                aria-label="Volume"
+                className="h-1 w-24 cursor-pointer accent-[#e9e6df]"
+              />
+            </div>
           </div>
           <button onClick={(e) => { e.currentTarget.blur(); if (tocando) pause(); else play(); }} aria-label={tocando ? "Pausar" : "Tocar"} className="ml-2 border border-line px-2 py-1 hover:border-paper">
             {tocando ? "❚❚" : "▶"}
